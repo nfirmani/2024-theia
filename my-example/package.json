@@ -9,7 +9,7 @@
     "src"
   ],
   "dependencies": {
-    "@theia/core": "latest",
+    "@theia/core": "next",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "d3-path": "latest",
@@ -20,7 +20,7 @@
     "@types/react-dom": "^16.0.6",
     "react-d3-tree": "latest",
     "rimraf": "latest",
-    "typescript": "2.9.2"
+    "typescript": "latest"
   },
   "scripts": {
     "prepare": "yarn run clean && yarn run build",
