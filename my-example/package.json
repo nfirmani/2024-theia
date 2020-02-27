@@ -1,0 +1,36 @@
+{
+ "name": "my-example",
+  "keywords": [
+    "theia-extension"
+  ],
+  "version": "0.0.0",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@theia/core": "latest",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "d3-path": "latest",
+    "@material-ui/core": "^4.1.2",
+    "@material-ui/icons": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^16.0.6",
+    "react-d3-tree": "latest",
+    "rimraf": "latest",
+    "typescript": "2.9.2"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && yarn run build",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "theiaExtensions": [
+    {
+      "frontend": "lib/browser/my-example-frontend-module"
+    }
+  ]
+}

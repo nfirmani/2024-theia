@@ -8,7 +8,7 @@
   "devDependencies": {
     "lerna": "2.4.0"
   },
-  "workspaces": [
-    "jsonschema-form-extension", "browser-app", "electron-app"
+  "workspaces": [   
+    "my-example", "browser-app", "electron-app"
   ]
 }
