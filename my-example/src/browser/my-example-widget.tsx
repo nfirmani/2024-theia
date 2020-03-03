@@ -4,7 +4,11 @@ import { injectable, inject, postConstruct } from "inversify";
 import { BaseWidget } from "@theia/core/lib/browser";
 import URI from "@theia/core/lib/common/uri";
 import { Disposable } from "@theia/core";
-import { MyExampleFormView } from "./my-example-view";
+//import { MyExampleFormView } from "./my-example-view";
+//import { GrafoView } from "./my-example-view-03";
+//import { Clock } from "./my-example-view-01";
+//import { CircleView } from "./my-example-view-02";
+import { Form01View } from "./my-example-view-04";
 
 export const MyExampleFormWidgetOptions = Symbol('MyexampleFormWidgetOptions');
 export interface MyExampleFormWidgetOptions {
@@ -29,7 +33,11 @@ export class MyExampleFormWidget extends BaseWidget {
         this.node.style.padding = '0px 15px';
         this.node.style.color = 'red'; // 'var(--theia-ui-font-color1)';
         this.toDispose.push(Disposable.create(() => ReactDOM.unmountComponentAtNode(this.node)));
-        ReactDOM.render(<MyExampleFormView />, this.node);
+        //ReactDOM.render(<MyExampleFormView />, this.node);
+        //ReactDOM.render(<GrafoView />, this.node);
+        //ReactDOM.render(<Clock />, this.node);
+        //ReactDOM.render(<CircleView />, this.node);
+        ReactDOM.render(<Form01View />, this.node);
     }
 
 }

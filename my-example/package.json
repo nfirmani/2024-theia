@@ -11,14 +11,16 @@
   "dependencies": {
     "@theia/core": "next",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "d3-path": "latest",
+    "react-dom": "^16.4.0",    
+    "d3-path": "latest",    
+    "d3": "latest",
+    "@types/d3": "latest",
     "@material-ui/core": "^4.1.2",
     "@material-ui/icons": "^4.2.1"
   },
   "devDependencies": {
     "@types/react-dom": "^16.0.6",
-    "react-d3-tree": "latest",
+    "react-d3-tree": "latest",    
     "rimraf": "latest",
     "typescript": "latest"
   },
