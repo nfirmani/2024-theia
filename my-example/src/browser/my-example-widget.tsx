@@ -8,7 +8,8 @@ import { Disposable } from "@theia/core";
 //import { GrafoView } from "./my-example-view-03";
 //import { Clock } from "./my-example-view-01";
 //import { CircleView } from "./my-example-view-02";
-import { Form01View } from "./my-example-view-04";
+//import { Form01View } from "./my-example-view-04";
+import { Login01View } from "./my-example-view-05";
 
 export const MyExampleFormWidgetOptions = Symbol('MyexampleFormWidgetOptions');
 export interface MyExampleFormWidgetOptions {
@@ -37,7 +38,8 @@ export class MyExampleFormWidget extends BaseWidget {
         //ReactDOM.render(<GrafoView />, this.node);
         //ReactDOM.render(<Clock />, this.node);
         //ReactDOM.render(<CircleView />, this.node);
-        ReactDOM.render(<Form01View />, this.node);
+        //ReactDOM.render(<Form01View />, this.node);
+        ReactDOM.render(<Login01View />, this.node);
     }
 
 }

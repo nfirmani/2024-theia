@@ -1,11 +1,8 @@
 import * as React from "react";
-//import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
@@ -143,147 +140,20 @@ export  function SignUp() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    container: {
-      backgroundColor: 'blue',
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
-    textField: {
-      marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(1),
-      width: 200,
-    }
-    
-  }),
-);
-*/
-
 export interface Greeting {
     name: string
     at: string
 }
 
-export class GreetingView extends React.Component<Greeting> {
-    render(): JSX.Element {
-//const classes = useStyles();
+export class Login01View extends React.Component<{}, Greeting> {    
+    render(): JSX.Element { 
 
-//const classes = useStyles(1);
-
-        return (
-
+         return (
         <div id="treeWrapper" style={{width: '50em', height: '20em'}}>
-
-
-        <h1>Hello {this.props.name} at {this.props.at}!</h1>
-
-        <TextField
-          id="standard-basic"
-          //className={classes.textField} 
-          style={{
-            backgroundColor: "blue"
-                }}
-            InputProps={{
-            style: {
-            color: "red"
-            }
-        }}
-          
-          label="Standard"
-          margin="normal"
-        /> 
 
         <SignUp />     
  
- </div>
-
-
-        );
-
-    }
+ </div> );
+    
 }
-
-export class Form01View extends React.Component<{}, Greeting> {
-
-    constructor(props: {}) {
-        super(props);
-        this.state = {
-            name: 'World',
-            at: 'Theia Workshop'
-        }
-    }
-
-    render(): JSX.Element {
-
-  //      const classes = useStyles(1);
-
-        return <React.Fragment>
-            <GreetingView name={this.state.name} at={this.state.at} />
-            Greet <input value={this.state.name} onChange={this.updateName} /> at <input value={this.state.at} onChange={this.updateAt} />
-        </React.Fragment>;
-    }
-
-    protected updateName = (e: React.ChangeEvent<HTMLInputElement>) => this.setState({
-        name: e.currentTarget.value
-    });
-
-    protected updateAt = (e: React.ChangeEvent<HTMLInputElement>) => this.setState({
-        at: e.currentTarget.value
-    });
-
-/*
-
-  protected BasicTextFields() {
-
-  const classes = useStyles(1);
-
-  return (
-    <form className={classes.container} noValidate autoComplete="off">
-      <div>
-        <TextField
-          id="standard-basic"
-          className={classes.textField}
-          label="Standard"
-          margin="normal"
-        />
-      </div>
-      <div>
-        <TextField
-          id="filled-basic"
-          className={classes.textField}
-          label="Filled"
-          margin="normal"
-          variant="filled"
-        />
-      </div>
-      <div>
-        <TextField
-          id="outlined-basic"
-          className={classes.textField}
-          label="Outlined"
-          margin="normal"
-          variant="outlined"
-        />
-      </div>
-    </form>
-  );
 }
-*/
-
-}
-
