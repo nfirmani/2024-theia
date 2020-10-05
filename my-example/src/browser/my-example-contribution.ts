@@ -1,5 +1,5 @@
 import { injectable, inject } from "inversify";
-import { CommandContribution, CommandRegistry, MenuContribution, MenuModelRegistry, MessageService } from "@theia/core/lib/common";
+import { CommandContribution, CommandRegistry, MenuContribution, MenuModelRegistry, MessageService, MAIN_MENU_BAR } from "@theia/core/lib/common";
 import { CommonMenus } from "@theia/core/lib/browser";
 import { EditorMainMenu } from "@theia/editor/lib/browser";
 
@@ -7,6 +7,8 @@ export const MyExampleFormCommand = {
     id: 'MyexampleForm',
     label: "Shows a message"
 };
+
+const MY_MAIN_MENU = [...MAIN_MENU_BAR, '9_mymenu'];
 
 @injectable()
 export class MyExampleFormCommandContribution implements CommandContribution {
@@ -27,10 +29,26 @@ export class MyExampleFormMenuContribution implements MenuContribution {
 
  
     registerMenus(menus: MenuModelRegistry): void {
-        menus.registerMenuAction(CommonMenus.EDIT_FIND, {
+       
+        menus.registerSubmenu(MY_MAIN_MENU, 'My Menu');
+       
+        
+        //menus.registerMenuAction(CommonMenus.EDIT_FIND, {
+        //    commandId: MyExampleFormCommand.id,
+        //    label: 'My-Example Hello'
+        //});
+
+        menus.registerMenuAction(MY_MAIN_MENU, {
             commandId: MyExampleFormCommand.id,
             label: 'My-Example Hello'
-        });
+        });        
+
+
+      
+        
+
+
+        
 
         //menus.unregisterMenuAction(CommonMenus.HELP[CommonMenus.HELP.length - 1], CommonMenus.HELP);
         //menus.unregisterMenuAction(CommonCommands.ABOUT_COMMAND);
