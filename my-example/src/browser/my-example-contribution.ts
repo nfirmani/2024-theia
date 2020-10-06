@@ -8,7 +8,13 @@ export const MyExampleFormCommand = {
     label: "Shows a message"
 };
 
+export const Elemento2Command = {
+    id: 'Elemento2',
+    label: "Mostra qualcosa"
+};
+
 const MY_MAIN_MENU = [...MAIN_MENU_BAR, '9_mymenu'];
+
 
 @injectable()
 export class MyExampleFormCommandContribution implements CommandContribution {
@@ -24,6 +30,21 @@ export class MyExampleFormCommandContribution implements CommandContribution {
     }
 }
 
+
+@injectable()
+export class Elemento2CommandContribution implements CommandContribution {
+
+    constructor(
+        @inject(MessageService) private readonly messageService: MessageService,
+    ) { }
+
+    registerCommands(registry: CommandRegistry): void {
+        registry.registerCommand(Elemento2Command, {
+            execute: () => this.messageService.info('Elemento 2 command!')
+        });
+    }
+}
+
 @injectable()
 export class MyExampleFormMenuContribution implements MenuContribution {
 
@@ -33,15 +54,20 @@ export class MyExampleFormMenuContribution implements MenuContribution {
         menus.registerSubmenu(MY_MAIN_MENU, 'My Menu');
        
         
-        //menus.registerMenuAction(CommonMenus.EDIT_FIND, {
-        //    commandId: MyExampleFormCommand.id,
-        //    label: 'My-Example Hello'
-        //});
+        menus.registerMenuAction(CommonMenus.EDIT_FIND, {
+            commandId: MyExampleFormCommand.id,
+            label: 'My-Example Hello'
+        });
 
         menus.registerMenuAction(MY_MAIN_MENU, {
             commandId: MyExampleFormCommand.id,
-            label: 'My-Example Hello'
+            label: 'My-Example-Hello'
         });        
+
+        menus.registerMenuAction(MY_MAIN_MENU, {
+            commandId: Elemento2Command.id,
+            label: 'Label elemento 2'
+        });       
 
 
       

@@ -1,5 +1,5 @@
 import { ContainerModule } from "inversify";
-import { MyExampleFormCommandContribution, MyExampleFormMenuContribution } from './my-example-contribution';
+import { Elemento2CommandContribution, MyExampleFormCommandContribution, MyExampleFormMenuContribution } from './my-example-contribution';
 import { CommandContribution, MenuContribution } from "@theia/core/lib/common";
 import { OpenHandler, WidgetFactory } from "@theia/core/lib/browser";
 import { MyExampleFormWidget, MyExampleFormWidgetOptions } from './my-example-widget';
@@ -9,8 +9,14 @@ export default new ContainerModule(bind => {
     // add your contribution bindings here
 
     bind(CommandContribution).to(MyExampleFormCommandContribution).inSingletonScope();
+    //bind(MenuContribution).to(MyExampleFormMenuContribution).inSingletonScope();
+    bind(CommandContribution).to(Elemento2CommandContribution).inSingletonScope();
+
     bind(MenuContribution).to(MyExampleFormMenuContribution).inSingletonScope();
 
+    
+    
+    
     bind(OpenHandler).to(MyExampleFormOpenHandler).inSingletonScope();
     bind(WidgetFactory).toDynamicValue(({ container }) => ({
         id: MyExampleFormWidget.id,
