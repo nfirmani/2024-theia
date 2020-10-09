@@ -12,6 +12,7 @@ import { Disposable } from "@theia/core";
 import { Login01View } from "./my-example-view-05";
 //import { CheckoutView } from "./my-example-checkout-view";
 //import { Rest01View } from "./my-example-view-06";
+//import { SampleViewUnclosableView } from "./my-example-view-07";
 
 export const MyExampleFormWidgetOptions = Symbol('MyexampleFormWidgetOptions');
 export interface MyExampleFormWidgetOptions {
@@ -43,6 +44,7 @@ export class MyExampleFormWidget extends BaseWidget {
         //ReactDOM.render(<Form01View />, this.node);
         ReactDOM.render(<Login01View />, this.node);
         //ReactDOM.render(<Rest01View />, this.node);
+        //ReactDOM.render(<SampleViewUnclosableView />, this.node);
     }
 
 }

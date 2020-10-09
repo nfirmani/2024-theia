@@ -13,7 +13,12 @@ export const Elemento2Command = {
     label: "Mostra qualcosa"
 };
 
-const MY_MAIN_MENU = [...MAIN_MENU_BAR, '9_mymenu'];
+export const Elemento3Command = {
+    id: 'Elemento3',
+    label: "Visualizza"
+};
+
+const MY_MAIN_MENU = [...MAIN_MENU_BAR, 'my-menu'];
 
 
 @injectable()
@@ -34,31 +39,53 @@ export class MyExampleFormCommandContribution implements CommandContribution {
 @injectable()
 export class Elemento2CommandContribution implements CommandContribution {
 
+/*
     constructor(
         @inject(MessageService) private readonly messageService: MessageService,
     ) { }
+*/
 
     registerCommands(registry: CommandRegistry): void {
         registry.registerCommand(Elemento2Command, {
-            execute: () => this.messageService.info('Elemento 2 command!')
+            execute: () => {alert('Elemento 2 command!')}
         });
-    }
+    };
+
 }
+
+@injectable()
+export class Elemento3CommandContribution implements CommandContribution {
+
+/*
+    constructor(
+        @inject(MessageService) private readonly messageService: MessageService,
+    ) { }
+*/
+
+    registerCommands(registry: CommandRegistry): void {
+        registry.registerCommand(Elemento3Command, {
+            execute: () => {alert('Elemento 3 command!')}
+        });
+    };
+
+}
+
+
 
 @injectable()
 export class MyExampleFormMenuContribution implements MenuContribution {
 
  
-    registerMenus(menus: MenuModelRegistry): void {
-       
-        menus.registerSubmenu(MY_MAIN_MENU, 'My Menu');
-       
+    registerMenus(menus: MenuModelRegistry): void {       
+        
+        menus.registerSubmenu(MY_MAIN_MENU, 'My Menu');       
         
         menus.registerMenuAction(CommonMenus.EDIT_FIND, {
             commandId: MyExampleFormCommand.id,
             label: 'My-Example Hello'
         });
 
+     
         menus.registerMenuAction(MY_MAIN_MENU, {
             commandId: MyExampleFormCommand.id,
             label: 'My-Example-Hello'
@@ -66,13 +93,13 @@ export class MyExampleFormMenuContribution implements MenuContribution {
 
         menus.registerMenuAction(MY_MAIN_MENU, {
             commandId: Elemento2Command.id,
-            label: 'Label elemento 2'
+            //label: 'Label elemento 2'
         });       
 
-
-      
-        
-
+        menus.registerMenuAction(MY_MAIN_MENU, {
+            commandId: Elemento3Command.id,
+            label: 'Label elemento 3'
+        });       
 
         
 
