@@ -105,7 +105,7 @@ export class MyExampleFormMenuContribution implements MenuContribution {
 
         //menus.unregisterMenuAction(CommonMenus.HELP[CommonMenus.HELP.length - 1], CommonMenus.HELP);
         //menus.unregisterMenuAction(CommonCommands.ABOUT_COMMAND);
-        menus.unregisterMenuAction(CommonMenus.HELP.slice(-1)[0]);
+        //menus.unregisterMenuAction(CommonMenus.HELP.slice(-1)[0]);
         menus.unregisterMenuAction(CommonMenus.VIEW.slice(-1)[0]);
         menus.unregisterMenuAction(CommonMenus.EDIT_UNDO[CommonMenus.EDIT_UNDO.length - 1]);
         //menus.unregisterMenuAction(DebugMenus.DEBUG.slice(-1)[0]);

@@ -2,6 +2,7 @@ import { WidgetOpenHandler } from "@theia/core/lib/browser";
 import { MyExampleFormWidget, MyExampleFormWidgetOptions } from "./my-example-widget";
 import URI from "@theia/core/lib/common/uri";
 import { injectable, inject } from "inversify";
+import { FileStat } from '@theia/filesystem/lib/common';
 import { EditorManager } from "@theia/editor/lib/browser";
 
 @injectable()
@@ -13,18 +14,25 @@ export class MyExampleFormOpenHandler extends WidgetOpenHandler<MyExampleFormWid
     @inject(EditorManager)
     protected readonly editorManager: EditorManager;
 
-    canHandle(uri: URI): number {
-        if (uri.path.ext !== '.json') {
+    canHandle(uri: object): number {
+        let toCheck = uri;
+        if (FileStat.is(toCheck)) {
+            toCheck = new URI(toCheck.uri);
+        }
+        if (toCheck instanceof URI) {
+        if (toCheck.path.ext !== '.json') {
             return 0;
         }
-        if (uri.path.name.endsWith('-data')) {
-             console.log('valore data ' + uri + ' ' + (this.editorManager.canHandle(uri) * 2));
-            return this.editorManager.canHandle(uri) * 2;
+        if (toCheck.path.name.endsWith('-data')) {
+             console.log('valore data ' + uri) ;
+            return 1000;
 
         }
-        console.log('valore non data ' + uri + (this.editorManager.canHandle(uri) / 2));
-        return this.editorManager.canHandle(uri) / 2;
+        console.log('valore non data ' + uri);
+        return 1000;
     }
+    return 0;
+}
 
     protected createWidgetOptions(uri: URI): MyExampleFormWidgetOptions {
         return { uri: uri.withoutFragment().toString() };
