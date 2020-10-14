@@ -33,7 +33,9 @@ export class MyExampleFormWidget extends BaseWidget {
         this.id = MyExampleFormWidget.id + ':' + uri
         this.title.label = 'Form ' + new URI(uri).displayName;
         this.title.closable = true;
-
+        
+        this.title.iconClass = 'fa fa-window-maximize';
+        
         this.node.style.padding = '0px 15px';
         this.node.style.color = 'red'; // 'var(--theia-ui-font-color1)';
         this.toDispose.push(Disposable.create(() => ReactDOM.unmountComponentAtNode(this.node)));
