@@ -1,3 +1,4 @@
+
 import { ContainerModule } from "inversify";
 
 import { Elemento2CommandContribution, 
@@ -6,7 +7,7 @@ import { Elemento2CommandContribution,
          MyExampleFormMenuContribution} from './my-example-contribution';
 
 import { CommandContribution, MenuContribution } from "@theia/core/lib/common";
-import { OpenHandler, WidgetFactory } from "@theia/core/lib/browser";
+import { OpenHandler, WidgetFactory, bindViewContribution, FrontendApplicationContribution } from "@theia/core/lib/browser";
 
 //import { MyExampleFormWidget, MyExampleFormWidgetOptions } from './my-example-widget';
 import { SampleViewUnclosableView } from './sample-unclosable-view';
@@ -14,9 +15,14 @@ import { SampleViewUnclosableView } from './sample-unclosable-view';
 import { SampleUnclosableFormOpenHandler } from './my-example-open-handler';
 import { MyExampleFormWidget, MyExampleFormWidgetOptions } from "./my-example-widget";
 import { MyExampleFormOpenHandler } from "./my-example-open-handler_myexample";
+import { GettingStartedContribution } from "./gs-contribution";
+import { GettingStartedWidget } from "./gs-widget";
+
+
 
 export default new ContainerModule(bind => {
     // add your contribution bindings here
+    
 
     bind(CommandContribution).to(MyExampleFormCommandContribution).inSingletonScope();
     //bind(MenuContribution).to(MyExampleFormMenuContribution).inSingletonScope();
@@ -49,7 +55,36 @@ export default new ContainerModule(bind => {
             return child.get(SampleViewUnclosableView);
         }
     }));
+
+
+    bindViewContribution(bind, GettingStartedContribution);
+    bind(FrontendApplicationContribution).toService(GettingStartedContribution);
+    bind(GettingStartedWidget).toSelf();
+    bind(WidgetFactory).toDynamicValue(context => ({
+        id: GettingStartedWidget.ID,
+        createWidget: () => context.container.get<GettingStartedWidget>(GettingStartedWidget),
+    })).inSingletonScope();
+});
     
 
+
+/*
+
+import { GettingStartedContribution } from './gs-contribution';
+import { ContainerModule, interfaces } from 'inversify';
+import { GettingStartedWidget } from './gs-widget';
+import { WidgetFactory, FrontendApplicationContribution, bindViewContribution } from '@theia/core/lib/browser';
+
+import '../../src/browser/style/index.css';
+
+export default new ContainerModule((bind: interfaces.Bind) => {
+    bindViewContribution(bind, GettingStartedContribution);
+    bind(FrontendApplicationContribution).toService(GettingStartedContribution);
+    bind(GettingStartedWidget).toSelf();
+    bind(WidgetFactory).toDynamicValue(context => ({
+        id: GettingStartedWidget.ID,
+        createWidget: () => context.container.get<GettingStartedWidget>(GettingStartedWidget),
+    })).inSingletonScope();
 });
+*/
 
