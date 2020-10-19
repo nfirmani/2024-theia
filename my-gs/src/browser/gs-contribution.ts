@@ -27,7 +27,8 @@ export class GettingStartedContribution extends AbstractViewContribution<Getting
             widgetId: GettingStartedWidget.ID,
             widgetName: GettingStartedWidget.LABEL,
             defaultWidgetOptions: {
-                area: 'main',
+                area: 'right',
+                rank: 1000
             }
         });
     }
