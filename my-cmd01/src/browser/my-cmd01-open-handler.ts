@@ -1,8 +1,7 @@
+
+
 import { WidgetOpenHandler } from "@theia/core/lib/browser";
-
-//import { MyExampleFormWidget, MyExampleFormWidgetOptions } from "./my-example-widget";
 import { SampleViewUnclosableView } from './sample-unclosable-view';
-
 
 import URI from "@theia/core/lib/common/uri";
 import { injectable, inject } from "inversify";
@@ -32,20 +31,19 @@ export class SampleUnclosableFormOpenHandler extends WidgetOpenHandler<SampleVie
         }
         if (toCheck.path.name.endsWith('-data')) {
              console.log('valore uri -data ' + uri) ;
-            return 1002;
+            return 1000;
 
         }
         console.log('valore uri -data ' + uri);
-        return 1002;
+        return 0;
     } 
     return 0;
 }
 
-    //protected createWidgetOptions(uri: URI): MyExampleFormWidgetOptions {
-    //    return { uri: uri.withoutFragment().toString() };
-    //}
+    
        protected createWidgetOptions(uri: URI): object {
         return { uri: uri.withoutFragment().toString() };
     }
 
 }
+

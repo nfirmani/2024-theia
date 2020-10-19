@@ -31,11 +31,11 @@ export class MyExampleFormOpenHandler extends WidgetOpenHandler<MyExampleFormWid
         }
         if (toCheck.path.name.endsWith('-schema')) {
              console.log('valore uri -schema ' + uri) ;
-            return 1001;
+            return 1000;
 
         }
         console.log('valore uri -schema ' + uri);
-        return 1001;
+        return 0;
     } 
     return 0;
 }

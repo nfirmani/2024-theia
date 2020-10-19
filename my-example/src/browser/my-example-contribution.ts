@@ -15,7 +15,7 @@ export const Elemento2Command = {
 
 export const Elemento3Command = {
     id: 'Elemento3',
-    label: "Visualizza"
+    label: "Test visualizza"
 };
 
 const MY_MAIN_MENU = [...MAIN_MENU_BAR, 'my-menu'];
@@ -64,7 +64,7 @@ export class Elemento3CommandContribution implements CommandContribution {
 
     registerCommands(registry: CommandRegistry): void {
         registry.registerCommand(Elemento3Command, {
-            execute: () => {alert('Elemento 3 command!')}
+            execute: () => {alert('Test Elemento 3 command!')}
         });
     };
 

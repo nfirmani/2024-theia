@@ -10,9 +10,9 @@ import { CommandContribution, MenuContribution } from "@theia/core/lib/common";
 import { OpenHandler, WidgetFactory } from "@theia/core/lib/browser";
 
 
-import { SampleViewUnclosableView } from './sample-unclosable-view';
+//import { SampleViewUnclosableView } from './sample-unclosable-view';
 
-import { SampleUnclosableFormOpenHandler } from './my-example-open-handler';
+//import { SampleUnclosableFormOpenHandler } from './my-example-open-handler';
 import { MyExampleFormWidget, MyExampleFormWidgetOptions } from "./my-example-widget";
 import { MyExampleFormOpenHandler } from "./my-example-open-handler_myexample";
 
@@ -32,7 +32,7 @@ export default new ContainerModule(bind => {
     bind(MenuContribution).to(MyExampleFormMenuContribution).inSingletonScope();
       
     bind(OpenHandler).to(MyExampleFormOpenHandler).inSingletonScope();
-    bind(OpenHandler).to(SampleUnclosableFormOpenHandler).inSingletonScope();
+   // bind(OpenHandler).to(SampleUnclosableFormOpenHandler).inSingletonScope();
 
    
     bind(WidgetFactory).toDynamicValue(({ container }) => ({
@@ -44,6 +44,8 @@ export default new ContainerModule(bind => {
             return child.get(MyExampleFormWidget);
         }
     }));
+
+/*
          
     bind(WidgetFactory).toDynamicValue(({ container }) => ({
         id: SampleViewUnclosableView.ID,
@@ -55,7 +57,7 @@ export default new ContainerModule(bind => {
         }
     }));
 
-/*
+
     bindViewContribution(bind, GettingStartedContribution);
     bind(FrontendApplicationContribution).toService(GettingStartedContribution);
     bind(GettingStartedWidget).toSelf();

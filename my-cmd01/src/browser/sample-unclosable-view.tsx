@@ -1,11 +1,7 @@
-/*
+
 import { ReactWidget } from '@theia/core/lib/browser';
 import { injectable, postConstruct } from 'inversify';
 import * as React from 'react';
-
-
-
-
 
 @injectable()
 export class SampleViewUnclosableView extends ReactWidget {
@@ -30,4 +26,3 @@ export class SampleViewUnclosableView extends ReactWidget {
     );
   }
 }
-*/

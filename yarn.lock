@@ -7923,11 +7923,6 @@ mv@^2.1.1, mv@~2:
     ncp "~2.0.0"
     rimraf "~2.4.0"
 
-my-example@0.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/my-example/-/my-example-1.0.1.tgz#54f63d56328f741e1cf921739398b3ad3015a476"
-  integrity sha512-ixmFgEgi0xlBcgDjPKOgh9OOLqNi9QqvUXw45rZN5jM9CGWyB7yuAHq8Idxtk7nxm2rQKSk3tL9CFenNl6VIVA==
-
 nan@2.10.0:
   version "2.10.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
