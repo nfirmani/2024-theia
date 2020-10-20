@@ -24,7 +24,7 @@ import { OutlineViewWidget } from './outline-view-widget';
 import { CompositeTreeNode } from '@theia/core/lib/browser/tree';
 import { OS } from '@theia/core/lib/common/os';
 
-export const OUTLINE_WIDGET_FACTORY_ID = 'my.outline-view';
+export const OUTLINE_WIDGET_FACTORY_ID = 'my-outline-view';
 
 /**
  * Collection of `outline-view` commands.
@@ -35,7 +35,7 @@ export namespace OutlineViewCommands {
      * from the `outline-view` tree.
      */
     export const COLLAPSE_ALL: Command = {
-        id: 'my.outlineView.collapse.all',
+        id: 'my-outlineView.collapse.all',
         iconClass: 'collapse-all'
     };
 }
@@ -46,14 +46,14 @@ export class OutlineViewContribution extends AbstractViewContribution<OutlineVie
     constructor() {
         super({
             widgetId: OUTLINE_WIDGET_FACTORY_ID,
-            widgetName: 'Outline',
+            widgetName: 'My Outline',
             defaultWidgetOptions: {
                 area: 'right',
-                rank: 400
+                rank: 500
             },
-            toggleCommandId: 'my.outlineView:toggle',
+            toggleCommandId: 'my-outlineView:toggle',
             toggleKeybinding: OS.type() !== OS.Type.Linux
-                ? 'ctrlcmd+shift+i'
+                ? undefined //'ctrlcmd+shift+i'
                 : undefined
         });
     }

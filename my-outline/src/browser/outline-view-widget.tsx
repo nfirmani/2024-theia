@@ -75,11 +75,11 @@ export class OutlineViewWidget extends TreeWidget {
     ) {
         super(treeProps, model, contextMenuRenderer);
 
-        this.id = 'outline-view';
-        this.title.label = 'Outline';
-        this.title.caption = 'Outline';
+        this.id = 'my-outline-view';
+        this.title.label = 'My Outline 2';
+        this.title.caption = 'My Outline 3';
         this.title.closable = true;
-        this.title.iconClass = 'fa outline-view-tab-icon';
+        //this.title.iconClass = 'fa outline-view-tab-icon';
         this.addClass('theia-outline-view');
     }
 
@@ -92,7 +92,7 @@ export class OutlineViewWidget extends TreeWidget {
         const nodes = this.reconcileTreeState(roots);
         // Update the model root node, appending the outline symbol information nodes as children.
         this.model.root = {
-            id: 'outline-view-root',
+            id: 'my-outline-view-root',
             name: 'Outline Root',
             visible: false,
             children: nodes,

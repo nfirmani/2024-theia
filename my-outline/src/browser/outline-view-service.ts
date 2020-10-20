@@ -23,7 +23,7 @@ import { Widget } from '@phosphor/widgets';
 @injectable()
 export class OutlineViewService implements WidgetFactory {
 
-    id = 'outline-view';
+    id = 'my-outline-view';
 
     protected widget?: OutlineViewWidget;
     protected readonly onDidChangeOutlineEmitter = new Emitter<OutlineSymbolInformationNode[]>();
