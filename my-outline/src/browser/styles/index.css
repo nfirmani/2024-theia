@@ -18,6 +18,13 @@
     content: "\f03a"
 }
 
+
+.myoutline-view-tab-icon::before {
+    content: "\f07a"
+}
+
+
+
 .no-outline {
     color: var(--theia-foreground);
     text-align: left;
