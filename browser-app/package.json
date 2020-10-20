@@ -15,10 +15,11 @@
     "@theia/markers": "next",
     "@theia/monaco": "next",
     "@theia/typescript": "next",
-    "@theia/messages": "next",
-    "my-gs": "0.0.0",
+    "@theia/messages": "next", 
     "my-cmd01": "0.0.0",
-    "my-example": "0.0.0"
+    "my-gs": "0.0.0",
+    "my-example": "0.0.0",
+    "my-outline": "0.0.0"
   },
   "devDependencies": {
     "@theia/cli": "next"

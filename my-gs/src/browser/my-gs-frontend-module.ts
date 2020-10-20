@@ -4,6 +4,8 @@ import { GettingStartedWidget } from './gs-widget';
 import { WidgetFactory, FrontendApplicationContribution, bindViewContribution } from '@theia/core/lib/browser';
 
 import '../../src/browser/style/index.css';
+import '../../src/browser/style/branding.css';
+import '../../src/browser/style/index-theia.css';
 
 export default new ContainerModule((bind: interfaces.Bind) => {
     bindViewContribution(bind, GettingStartedContribution);

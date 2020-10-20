@@ -16,8 +16,7 @@
     "@theia/markers": "next",
     "@theia/monaco": "next",
     "@theia/typescript": "next",
-    "@theia/messages": "next",
-    "my-gs": "0.0.0"
+    "@theia/messages": "next"
   },
   "devDependencies": {
     "@theia/cli": "next"

@@ -1,0 +1,12 @@
+.outline-view-tab-icon::before {
+    content: "\f03a"
+}
+
+.no-outline {
+    color: var(--theia-foreground);
+    text-align: left;
+}
+
+.theia-side-panel .no-outline {
+    margin-left: 9px;
+}
