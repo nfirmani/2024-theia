@@ -82,6 +82,7 @@ export class GettingStartedWidget extends ReactWidget {
         this.title.label = GettingStartedWidget.LABEL;
         this.title.caption = GettingStartedWidget.LABEL;
         this.title.closable = true;
+        this.title.iconClass = 'fa mygs-view-tab-icon';
 
         this.applicationInfo = await this.appServer.getApplicationInfo();
         this.recentWorkspaces = await this.workspaceService.recentWorkspaces();

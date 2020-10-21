@@ -18,11 +18,16 @@
     content: "\f03a"
 }
 
-
+/*
 .myoutline-view-tab-icon::before {
     content: "\f07a"
 }
+*/
 
+
+.myoutline-view-tab-icon::before {
+    content: url('../icons/globe2.svg')  /*  "\f06a"   */
+}
 
 
 .no-outline {

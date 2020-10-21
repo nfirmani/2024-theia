@@ -10,3 +10,7 @@
 .theia-side-panel .no-outline {
     margin-left: 9px;
 }
+
+.mygs-view-tab-icon::before {
+    content: url('../icons/chat-quote.svg')  /*  "\f06a"   */
+}
