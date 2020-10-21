@@ -19,7 +19,8 @@
     "my-cmd01": "0.0.0",
     "my-gs": "0.0.0",
     "my-example": "0.0.0",
-    "my-outline": "0.0.0"
+    "my-outline": "0.0.0",
+    "my-tree": "0.0.0"
   },
   "devDependencies": {
     "@theia/cli": "next"

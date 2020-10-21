@@ -9,6 +9,6 @@
     "lerna": "2.4.0"
   },
   "workspaces": [   
-    "my-gs", "my-cmd01", "my-example", "my-outline", "browser-app", "electron-app"
+    "my-gs", "my-cmd01", "my-example", "my-outline", "my-tree", "browser-app", "electron-app"
   ]
 }
