@@ -5,3 +5,9 @@
     padding: 10px;
     text-transform: uppercase;
 }
+
+
+.mytree-view-tab-icon::before {
+    content: url('../icons/globe2.svg')  /*  "\f06a"   */
+}
+

@@ -23,6 +23,9 @@ export class FamilyTreeWidget extends TreeWidget {
 
     this.title.label = FamilyTreeWidget.LABEL;
     this.id = FamilyTreeWidget.ID;
+    this.title.iconClass = 'fa mytree-view-tab-icon';
+
+
 
     const family: Family = {
       name: "Vestrit",

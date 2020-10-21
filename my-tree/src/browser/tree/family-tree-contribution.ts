@@ -15,6 +15,7 @@ export class FamilyTreeWidgetContribution extends AbstractViewContribution<Famil
       widgetId: FamilyTreeWidget.ID,
       widgetName: FamilyTreeWidget.LABEL,
       defaultWidgetOptions: { area: "left" },
+      
       toggleCommandId: FamilyTreeWidgetCommand.id
     });
   }
