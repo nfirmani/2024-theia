@@ -1,5 +1,5 @@
 {
- "name": "my-example",
+  "name": "my-example",
   "keywords": [
     "theia-extension"
   ],
@@ -9,18 +9,19 @@
     "src"
   ],
   "dependencies": {
-    "@theia/core": "next",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",    
-    "d3-path": "latest",    
-    "d3": "latest",
-    "@types/d3": "latest",
     "@material-ui/core": "^4.1.2",
-    "@material-ui/icons": "^4.2.1"
+    "@material-ui/icons": "^4.2.1",
+    "@theia/core": "next",
+    "@types/d3": "latest",
+    "d3": "latest",
+    "d3-path": "latest",
+    "material-table": "^1.69.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
   },
   "devDependencies": {
     "@types/react-dom": "^16.0.6",
-    "react-d3-tree": "latest",    
+    "react-d3-tree": "latest",
     "rimraf": "latest",
     "typescript": "latest"
   },

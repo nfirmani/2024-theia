@@ -23,6 +23,7 @@ export class TestWidgetWidget extends ReactWidget {
         this.update();
     }
 
+    
     protected render(): React.ReactNode {
         const header = `This is a sample widget which simply calls the messageService
         in order to display an info message to end users.`;
@@ -39,6 +40,8 @@ export class TestWidgetWidget extends ReactWidget {
             </div>
         </div>
     }
+    
+ 
 
     protected displayMessage(): void {
         this.messageService.info('Congratulations: TestWidget Widget Successfully Created!');
