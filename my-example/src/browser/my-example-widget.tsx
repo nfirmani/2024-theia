@@ -10,10 +10,13 @@ import { Disposable } from "@theia/core";
 //import { CircleView } from "./my-example-view-02";
 //import { Form01View } from "./my-example-view-04";
 //import { Login01View } from "./my-example-view-05";
-import { Table01View } from "./my-table-view-01";
 //import { CheckoutView } from "./my-example-checkout-view";
 //import { Rest01View } from "./my-example-view-06";
 //import { SampleViewUnclosableView } from "./my-example-view-07";
+
+import { Table01View } from "./my-table-view-01";
+//import { DataGrid01View } from "./my-datagrid-view-01";
+
 
 export const MyExampleFormWidgetOptions = Symbol('MyexampleFormWidgetOptions');
 export interface MyExampleFormWidgetOptions {
@@ -49,6 +52,8 @@ export class MyExampleFormWidget extends BaseWidget {
         //ReactDOM.render(<Rest01View />, this.node);
         //ReactDOM.render(<SampleViewUnclosableView />, this.node);
         ReactDOM.render(<Table01View />, this.node);
+        //ReactDOM.render(<DataGrid01View />, this.node);
+
     }
 
 }

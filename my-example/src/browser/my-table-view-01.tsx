@@ -1,10 +1,15 @@
 import * as React from "react";
 import MaterialTable from 'material-table';
 
+import SaveAlt from '@material-ui/icons/SaveAlt';
+
+
+
 
 function SimpleAction() {
     return (
-        <MaterialTable
+        <MaterialTable   
+                
             title="Simple Action Preview"
             columns={[
                 { title: 'Name', field: 'name' },
@@ -27,7 +32,7 @@ function SimpleAction() {
             ]}
             actions={[
                 {
-                    icon: 'save',
+                    icon: SaveAlt,
                     tooltip: 'Save User',
                     onClick: () => alert('You saved')
                 }

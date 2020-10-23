@@ -7,7 +7,7 @@ import { Elemento2CommandContribution,
          MyExampleFormMenuContribution} from './my-example-contribution';
 
 import { CommandContribution, MenuContribution } from "@theia/core/lib/common";
-import { OpenHandler, WidgetFactory } from "@theia/core/lib/browser";
+import { OpenHandler, WidgetFactory, bindViewContribution, FrontendApplicationContribution } from "@theia/core/lib/browser";
 
 
 //import { SampleViewUnclosableView } from './sample-unclosable-view';
@@ -15,6 +15,8 @@ import { OpenHandler, WidgetFactory } from "@theia/core/lib/browser";
 //import { SampleUnclosableFormOpenHandler } from './my-example-open-handler';
 import { MyExampleFormWidget, MyExampleFormWidgetOptions } from "./my-example-widget";
 import { MyExampleFormOpenHandler } from "./my-example-open-handler_myexample";
+import { MyDatagridWidget } from "./my-datagrid-widget";
+import { MyDatagridWidgetContribution } from "./my-datagrid-contribution";
 
 
 
@@ -35,7 +37,9 @@ export default new ContainerModule(bind => {
    // bind(OpenHandler).to(SampleUnclosableFormOpenHandler).inSingletonScope();
 
    
-    bind(WidgetFactory).toDynamicValue(({ container }) => ({
+    
+   //MyExampleFormWidget
+   bind(WidgetFactory).toDynamicValue(({ container }) => ({
         id: MyExampleFormWidget.id,
         createWidget: (options: MyExampleFormWidgetOptions) => {
             const child = container.createChild();
@@ -44,6 +48,18 @@ export default new ContainerModule(bind => {
             return child.get(MyExampleFormWidget);
         }
     }));
+
+    bindViewContribution(bind, MyDatagridWidgetContribution);
+  bind(FrontendApplicationContribution).toService(MyDatagridWidgetContribution);
+
+    //MyDatagridWidget
+    bind(MyDatagridWidget).toSelf();
+    bind(WidgetFactory).toDynamicValue(context => ({
+        id: MyDatagridWidget.ID,
+        createWidget: () => context.container.get<MyDatagridWidget>(MyDatagridWidget),
+    })).inSingletonScope();
+
+
 
 /*
          
