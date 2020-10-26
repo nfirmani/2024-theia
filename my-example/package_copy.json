@@ -8,7 +8,7 @@
     "lib",
     "src"
   ],
-   "dependencies": {
+  "dependencies": {
     "@material-ui/core": "^4.1.2",
     "@material-ui/data-grid": "^4.0.0-alpha.7",
     "@material-ui/icons": "^4.9.1",
