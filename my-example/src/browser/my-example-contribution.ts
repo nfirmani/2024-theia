@@ -3,6 +3,8 @@ import { CommandContribution, CommandRegistry, MenuContribution, MenuModelRegist
 import { CommonMenus } from "@theia/core/lib/browser";
 import { EditorMainMenu } from "@theia/editor/lib/browser";
 
+import { MonacoMenus } from "@theia/monaco/lib/browser/monaco-menu";
+
 export const MyExampleFormCommand = {
     id: 'MyexampleForm',
     label: "Shows a message"
@@ -109,7 +111,8 @@ export class MyExampleFormMenuContribution implements MenuContribution {
         menus.unregisterMenuAction(CommonMenus.VIEW.slice(-1)[0]);
         menus.unregisterMenuAction(CommonMenus.EDIT_UNDO[CommonMenus.EDIT_UNDO.length - 1]);
         //menus.unregisterMenuAction(DebugMenus.DEBUG.slice(-1)[0]);
-        menus.unregisterMenuAction(EditorMainMenu.GO.slice(-1)[0]);       
+        menus.unregisterMenuAction(EditorMainMenu.GO.slice(-1)[0]);
+        menus.unregisterMenuAction(MonacoMenus.SELECTION.slice(-1)[0] );         
 
 
     };
